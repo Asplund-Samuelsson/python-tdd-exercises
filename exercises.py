@@ -89,7 +89,7 @@ def histogram(l):
     """
     Converts a list of integers into a simple string histogram.
     """
-    return None
+    return '\n'.join(['#'*n for n in l])
 
 
 def test_histogram():
