@@ -315,7 +315,11 @@ def read_column(file_name, column_number):
     Reads column column_number from file file_name
     and returns the values as floats in a list.
     """
-    return None
+    column = []
+    for line in open(file_name):
+        if line == "\n": continue
+        column = column + [float(line.split()[column_number-1])]
+    return column
 
 
 def test_read_column():
