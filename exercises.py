@@ -277,9 +277,14 @@ def get_3mer_usage_chart(s):
     The list is alphabetically sorted by the name
     of the 3-mer.
     """
-    for n in range(0,len(list(dna))-2):
-        test_triplet = "".join(list(dna)[n:n+3])
-    return None
+    triplets = {}
+    for n in range(0,len(list(s))-2):
+        triplet = "".join(list(s)[n:n+3])
+        try:
+            triplets[triplet] += 1
+        except KeyError:
+            triplets[triplet] = 1
+    return [(t,triplets[t]) for t in sorted(set(triplets.keys()))]
 
 
 def test_get_3mer_usage_chart():
