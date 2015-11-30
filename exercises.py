@@ -17,7 +17,8 @@ def reverse_string(s):
     """
     Reverses order of characters in string s.
     """
-    return None
+    s_rev = "".join(reversed([c for c in s]))
+    return s_rev
 
 
 def test_reverse_string():
