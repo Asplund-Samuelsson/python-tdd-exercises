@@ -251,7 +251,14 @@ def get_position_indices(triplet, dna):
     in a DNA sequence. We start counting from 0
     and jump by 3 characters from one position to the next.
     """
-    return None
+    triplet = triplet.upper()
+    dna = dna.upper()
+    l = []
+    for n in range(0,len(list(dna))-2,3):
+        test_triplet = "".join(list(dna)[n:n+3])
+        if triplet == test_triplet:
+            l = l + [n/3]
+    return l
 
 
 def test_get_position_indices():
@@ -270,6 +277,8 @@ def get_3mer_usage_chart(s):
     The list is alphabetically sorted by the name
     of the 3-mer.
     """
+    for n in range(0,len(list(dna))-2):
+        test_triplet = "".join(list(dna)[n:n+3])
     return None
 
 
