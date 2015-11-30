@@ -64,7 +64,10 @@ def count_num_vowels(s):
     """
     Returns the number of vowels in a string s.
     """
-    return None
+    vowels = ["a","e","i","o","u","y"]
+    s = s.lower()
+    n_vowels = sum([c in vowels for c in list(s)])
+    return n_vowels
 
 
 def test_count_num_vowels():
