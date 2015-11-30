@@ -156,7 +156,11 @@ def base_pair(c):
     of the base pair. If the base is not recognized,
     return 'unknown'.
     """
-    return None
+    try:
+        complement = {'a':'t','t':'a','g':'c','c':'g'}[c.lower()]
+    except KeyError:
+        complement = 'unknown'
+    return complement
 
 
 def test_base_pair():
