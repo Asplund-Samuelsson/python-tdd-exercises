@@ -217,7 +217,9 @@ def get_reverse_complement(s):
     Return the reverse complement of string s
     (complement reversed in order).
     """
-    return None
+    s_rev = reversed(list(s.upper()))
+    s_rev_comp = "".join([{'A':'T','T':'A','G':'C','C':'G'}[b] for b in s_rev])
+    return s_rev_comp
 
 
 def test_get_reverse_complement():
