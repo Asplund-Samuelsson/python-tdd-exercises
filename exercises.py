@@ -457,6 +457,7 @@ def pythagorean_triples(n):
 def test_pythagorean_triples():
     trips = {25:[(3,4,5),(6,8,10),(5,12,13),(9,12,15),(8,15,17),(12,16,20),(15,20,25),(7, 24, 25)],
              17:[(3,4,5),(6,8,10),(5,12,13),(9,12,15),(8,15,17)],
-             5:[(3,4,5)]}
+             5:[(3,4,5)],
+             0:[]}
     for n in trips:
         assert trips[n] == pythagorean_triples(n)
